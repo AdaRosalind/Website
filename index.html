@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel=stylesheet type=text/css href=style.css>
+        <title>Ada's Puppy Play Club</title>
+
+        <script lang="javascript">
+            /* https://stackoverflow.com/a/7838061 */
+            function getAge(bdayStr){
+                var now = new Date();
+                var age = [];
+                var birthday = new Date(bdayStr);
+
+                var y = [now.getFullYear(), birthday.getFullYear()];
+                var m = [now.getMonth(), birthday.getMonth()];
+                var d = [now.getDate(), birthday.getDate()];
+
+                var y_diff = y[0] - y[1];
+                var m_diff = m[0] - m[1];
+                var d_diff = d[0] - d[1];
+
+                if (m_diff < 0 || (m_diff === 0 && d_diff < 0)) {
+                    --y_diff;
+                }
+
+                if (m_diff < 0 ) {
+                    m_diff += 12;
+                }
+
+                if (d_diff < 0) {
+                    now.setMonth(m[1] + 1, 0);
+                    d_diff = birthday.getDate() - d[1] + d[0];
+                    --m_diff;
+                } 
+
+                if (y_diff > 0) {
+                    age.push(y_diff + ' year' + (y_diff > 1 ? 's ' : ' '));
+                }
+
+                if (m_diff > 0) {
+                    age.push(m_diff + ' month' +(m_diff> 1 ? 's' : ''));
+                }
+
+                if (d_diff > 0) {
+                    age.push(d_diff + ' day' + (d_diff > 1 ? 's' : ''));
+                }   
+
+                if (age.length > 1) {
+                    age.splice(age.length - 1, 0, ' and ');    
+                }
+
+                var result = age.join('');
+                return result;
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="titleblock">
+            <img src="images/title.png" class="center" alt="Ada's Puppy Play Club"/>
+        </div>
+
+        <div class="content">
+            <h1>Come play with us!</h1>
+            <p>If you're a <a href="https://www.waghotels.com/vaccination-resources">vaccinated</a>, polite, and playful dog near the Lincoln Park/Lakeview area of Chicago, Ada and her friends would love to play with you!</p> 
+            <p>Join our <a href="https://docs.google.com/forms/d/e/1FAIpQLSd83mfWsYOnJo-QIofzWWVrtm9QaPL-QHTCO_AtQhRcBioEwg/viewform?usp=sf_link">Google Group</a> to schedule doggy play dates and swap puppy parenting tips.</p>
+            <h1>Ada and her friends</h1>
+            <div>
+                <h2>Ada Rosalind</h2>
+                <div class="portrait">
+                    <img src="images/frens/AdaRosalind.png"/>
+                </div>
+                <p><strong>Age: </strong><script>document.write(getAge('2024-04-01'))</script></p>
+                <p><strong>Bio: </strong>Ada Rosalind is a founding member of the Agents of Chaos, a chaotic good-aligned hacker group run entirely by people’s pets. She specializes in firmware analysis, reverse engineering, and receiving belly pets. She's super energetic and loves rough play, but can tone it down with a little guidance from older dogs. Ada was adopted at <a href="https://www.pawschicago.org">PAWS Chicago</a> and is a mix of 35.7% German Shepard, 26.4% Supermutt <i>(Chihuahua, Shih Tzu, Dachshund, Belgian Malinois)</i>, 14.1% Siberian Husky, and 6.4% Chow Chow. 
+</strong></p>
+            </div>
+            
+            <div>
+                <h2><br/>More to come soon...</h2>
+            </div>
+        </div>
+
+    </body>
+
+</html>

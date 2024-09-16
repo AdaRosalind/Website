@@ -1,0 +1,75 @@
+body {
+    background-image: url('images/paws.png');
+    background-size: 25%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content, .titleblock {
+    margin-top: 3vh;    
+    margin-bottom: 3vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    background: rgba(200, 255, 255, 0.9);
+    border: 4px solid rgba(20, 20, 20, 0.7);
+    padding: 2vmin;
+    overflow: hidden;
+}
+
+.titleblock {
+    max-height: min(100%, 10vh);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+h1, h2, h3, h4 {
+    font-family: cursive;
+    font-size: 1.5em; 
+    font-style: italic;
+}
+
+h2 { 
+    font-size: 1.25em; 
+    padding-left: 2vw;
+}
+
+h3 { 
+    font-size: 1.00em; 
+    padding-left: 4vw;
+}
+
+h4 { 
+    font-size: 0.75em; 
+}
+
+p {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    font-family: verdana;
+}
+
+a:link, a:visited {
+    color: rgb(15, 194, 229);
+    font-style: bold;
+}
+
+a:hover {
+    background: magenta;
+}
+
+img {
+    max-width: 100%; 
+    max-height: 100%;
+}
+
+.portrait {
+    max-width: 100%;
+    float: right;
+    padding-left: 2vw;
+}
